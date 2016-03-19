@@ -1,0 +1,5 @@
+node_modules/
+.env
+database.json
+public/js/lib/templates.js
+*.sql

@@ -1,0 +1,33 @@
+doctype
+html(lang='en')
+	head
+		title= title || 'Home Page'
+
+		meta(name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1')
+		
+		link(rel='stylesheet',href='//maxcdn.bootstrapcdn.com/bootswatch/3.3.5/spacelab/bootstrap.min.css')
+
+		block css
+
+	body(v-cloak,style="background-color:black")
+
+		div#app.container-fluid
+			div#loading-page(v-show='loading')
+				img(src='/images/loading.gif',alt='Loading Image',style='position: absolute; margin:auto; left:0; right:0; top:0; bottom:0')
+
+			div#whole-page(v-show='!loading')
+				div(v-show='authenticated')
+					block navbar
+
+				div.row(style='margin-top:50px')
+					div.col-md-12
+						block content
+
+		script(type='text/javascript',src='//code.jquery.com/jquery-2.1.4.min.js')
+		script(type="text/javascript",src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js") 
+		script(type='text/javascript',src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js')
+		script(type='text/javascript',src='//cdnjs.cloudflare.com/ajax/libs/bootstrap-growl/1.0.0/jquery.bootstrap-growl.min.js')
+		script(type='text/javascript',src='//cdnjs.cloudflare.com/ajax/libs/vue/1.0.17/vue.min.js')
+		script(type='text/javascript',src='//cdnjs.cloudflare.com/ajax/libs/vue-router/0.7.11/vue-router.min.js')
+
+		block js

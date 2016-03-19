@@ -1,0 +1,25 @@
+extends ../layouts/master
+
+block css
+
+
+block navbar
+	include ./navbar
+
+block content
+	router-view
+
+block js
+
+	script(type="text/javascript",src='/js/lib/socketcluster.js')
+	script(type="text/javascript",src='/js/lib/templates.js')
+	script(type="text/javascript",src='/js/src/system/common.js')
+
+	script(type="text/javascript",src='/js/src/routes/dashboard.js')
+	script(type="text/javascript",src='/js/src/routes/profile.js')
+	script(type="text/javascript",src='/js/src/routes/session.js')
+	script(type="text/javascript",src='/js/src/routes/users.js')
+
+	script(type="text/javascript",src='/js/src/system/vue.js')
+	script(type="text/javascript",src='/js/src/system/server.js')
+	script(type="text/javascript",src='/js/src/system/router.js')

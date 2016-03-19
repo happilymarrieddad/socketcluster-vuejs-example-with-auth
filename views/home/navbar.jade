@@ -1,0 +1,25 @@
+nav.navbar.navbar-inverse.navbar-fixed-top(v-cloak)
+	div.navbar-inner
+		div.container
+			div.navbar-header
+				button.navbar-toggle(type="button",data-toggle="collapse",data-target="#navbar-collapse-1",aria-expanded="false")
+					span.sr-only Toggle navigation
+					span.icon-bar
+					span.icon-bar
+					span.icon-bar
+			div#navbar-collapse-1.collapse.navbar-collapse
+				ul.nav.navbar-nav
+					li
+						a(href='#!/dashboard') Dashboard
+				ul.nav.navbar-nav.navbar-right(v-show="authenticated")
+					li.dropdown
+						a.dropdown-toggle(href="#",data-toggle="dropdown",role="button",aria-haspopup="true",aria-expended="false")
+							span {{ username }}
+						ul.dropdown-menu
+							li
+								a(href='#!/profile') Profile
+							li
+								a(href='#!/session/session',@click="logout") Log Out
+				ul.nav.navbar-nav.navbar-right(v-show="!authenticated")
+					li
+						a(href="#!/session/create") Log In
