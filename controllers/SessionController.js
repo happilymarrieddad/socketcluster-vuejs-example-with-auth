@@ -10,7 +10,9 @@ SessionController.create = function(socket,pool,data,respond) {
 		} else {
 			socket.setAuthToken({
 				id:user.id,
-				email:data.email
+				email:data.email,
+				first:user.first,
+				last:user.last
 			})
 			respond(null,user)
 		}
